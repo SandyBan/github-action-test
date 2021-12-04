@@ -20,5 +20,5 @@ jobs:
         with: 
           host: ${{ secrets.AWS_HOST }}
           username: ${{ secrets.AWS_USER }}
-          fingerprint: ${{ secrets.AWS_KEY }}
+          key: ${{ secrets.AWS_KEY }}
           script: sh run.sh
