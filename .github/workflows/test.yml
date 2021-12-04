@@ -17,6 +17,14 @@ jobs:
     steps:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.5.0
+        with:
+          node-version: "17"
+      
+      - name: Setup yarn
+        run: npm install -g yarn
+        
+      - name: Setup pm2
+        run: npm install -g pm2
         
       - name: executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
