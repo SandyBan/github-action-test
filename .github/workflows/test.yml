@@ -20,5 +20,6 @@ jobs:
         with: 
           host: ${{ secrets.AWS_HOST }}
           username: ${{ secrets.AWS_USER }}
+          password: ${{ secrets.PASSWORD }}
           key: ${{ secrets.AWS_KEY }}
           script: sh run.sh
