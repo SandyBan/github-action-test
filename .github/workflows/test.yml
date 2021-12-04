@@ -22,8 +22,16 @@ jobs:
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.AWS_KEY }}
           script: |
-            echo "chmod +x run.sh"
-            chmod +x run.sh
-            echo "run.sh"
-            sh run.sh
+            echo "========> Move directory"
+            cd github-action-test
+            
+            echo "========> Fetch and Pull from Git"
+            git fetch
+            git pull
+
+            echo "========> Build"
+            yarn build
+
+            echo "========> Restart pm2"
+            pm2 restart ecosystem.config.js
             
