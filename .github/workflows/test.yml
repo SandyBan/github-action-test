@@ -30,8 +30,8 @@ jobs:
             git pull
 
             echo "========> Build"
-            yarn build
+            sudo yarn build
 
             echo "========> Restart pm2"
-            pm2 restart ecosystem.config.js
+            sudo pm2 restart ecosystem.config.js
             
