@@ -21,17 +21,4 @@ jobs:
           host: ${{ secrets.AWS_HOST }}
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.AWS_KEY }}
-          script: |
-            echo "========> Move directory"
-            cd github-action-test
-            
-            echo "========> Fetch and Pull from Git"
-            git fetch
-            git pull
-
-            echo "========> Build"
-            sudo yarn build
-
-            echo "========> Restart pm2"
-            sudo pm2 restart ecosystem.config.js
-            
+          script: ./run.sh
