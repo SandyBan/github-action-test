@@ -21,4 +21,9 @@ jobs:
           host: ${{ secrets.AWS_HOST }}
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.AWS_KEY }}
-          script: ./run.sh
+          script: 
+            cd github-action-test
+            git fetch
+            git pull
+            yarn build
+            pm2 restart ecosystem.config.js
