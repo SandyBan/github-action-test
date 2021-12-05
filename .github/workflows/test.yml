@@ -26,7 +26,7 @@ jobs:
           aws-region: ap-northeast-2
 
       - name: Build
-        run: yarn add && yarn build
+        run: yarn && yarn build
 
       - name: Deploy static site to S3 bucket
         run: aws s3 sync ./out s3://sandy-action-test
